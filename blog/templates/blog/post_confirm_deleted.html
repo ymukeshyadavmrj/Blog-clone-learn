@@ -1,0 +1,9 @@
+{%extends "blog/base.html" %}
+{%block content%}
+<form  action="" method="POST">
+  {% csrf_token %}
+  <p>Are you sure you want to delete {{post.title}} really?</p>
+  <input type="submit" name="" class="btn btn-danger" value="Confirm">
+  <a href="{% url 'post_detail' pk=post.pk %}">Cancel</a>
+</form>
+{% endblock %}
